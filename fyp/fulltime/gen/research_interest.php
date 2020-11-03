@@ -136,7 +136,7 @@ try {
 
     $stmt_1->execute();
     $rsResearchInterest = $stmt_1->fetchAll(PDO::FETCH_ASSOC);
-    print_r($rsResearchInterest);
+
     $AL_Staff_Filter 		= array();
     foreach ($rsResearchInterest as $key => $value) {
         $AL_Staff_Filter[$value["staff_id"]] = $value;
@@ -369,7 +369,6 @@ $queryString_rsStaff = sprintf("&totalRows=%d%s", $Total_RowCount, $queryString_
 
                         $interest = $row_rsResearchInterest["interests"];
 
-                        echo $interest;
                         if ($interest != "") {
                             $interest = str_replace('---', "\n", $interest);
                         }
