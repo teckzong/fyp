@@ -561,6 +561,22 @@ $conn_db_ntu = null;
                         </tr>
                         <tr>
 
+                          <?php
+                        $date = date("M");
+                        if(!isset($_REQUEST["filter_Sem"]) )
+                        {
+                          if($date == "Jan" || $date == "Feb" || $date =="Mar" ||$date == "Apr" || $date =="May" ||$date == "Jun" ||$date == "Jul")
+                          {
+
+                              $_SESSION["semester"] = 1;
+                          }else if( $date == "Aug" || "Sep" || "Oct"  || "Nov" || "Dec" )
+                          {
+
+                              $_SESSION["semester"]= 2;
+                          }
+                        }
+
+                        ?>
                             <td>
                                 <b>Sem</b>
 
